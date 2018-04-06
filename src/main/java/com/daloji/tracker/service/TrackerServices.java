@@ -1,8 +1,5 @@
 package com.daloji.tracker.service;
 
-import java.util.List;
-
-import com.daloji.tracker.model.Localisation;
 import com.daloji.tracker.model.Tracker;
 
 public interface  TrackerServices {
@@ -14,6 +11,7 @@ public interface  TrackerServices {
 	//List<Tracker> findLocalisationByName(String name);
 	
 	Tracker addTracker(Tracker tracker);
+	
 	
 	void delete(Tracker tracker);
 }

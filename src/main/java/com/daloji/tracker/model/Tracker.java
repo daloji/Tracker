@@ -6,7 +6,6 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -31,16 +30,15 @@ public class Tracker  implements Serializable{
 	@Column(name="name",unique=true)
 	private String name;
 	
-	@Column(name="number")
-	@ElementCollection(fetch = FetchType.EAGER)
-	private List<String> number;
+	@Column(name="credential")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "tracker", cascade = CascadeType.ALL)
+	private List<Credential> credential;
 	
 	@Column(name="identification")
 	private String identification;
 	
 	@Column(name="info")
 	private String info;
-	
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tracker", cascade = CascadeType.ALL)
 	private Set<Localisation> localisation;
@@ -96,13 +94,13 @@ public class Tracker  implements Serializable{
 	}
 
 
-	public List<String> getNumber() {
-		return number;
+	public List<Credential> getCredential() {
+		return credential;
 	}
 
 
-	public void setNumber(List<String> number) {
-		this.number = number;
+	public void setCredential(List<Credential> credential) {
+		this.credential = credential;
 	}
-	
+
 }

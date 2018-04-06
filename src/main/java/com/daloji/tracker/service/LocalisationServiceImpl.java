@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.daloji.tracker.model.Localisation;
+import com.daloji.tracker.repository.LocalisationRepository;
 
 @Component("localisationService")
 @Transactional

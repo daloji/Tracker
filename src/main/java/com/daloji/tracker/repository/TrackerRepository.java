@@ -1,4 +1,4 @@
-package com.daloji.tracker.service;
+package com.daloji.tracker.repository;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

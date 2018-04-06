@@ -12,7 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.daloji.tracker.model.Localisation;
-import com.daloji.tracker.service.LocalisationRepository;
+import com.daloji.tracker.repository.LocalisationRepository;
+
 
 
 @RunWith(SpringRunner.class)

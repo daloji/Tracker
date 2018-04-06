@@ -21,30 +21,30 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@ActiveProfiles("scratch")
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
+//@ActiveProfiles("scratch")
 // Separate profile for web tests to avoid clashing databases
 public class TrackerApplicationTest {
 
-	@Autowired
+	//@Autowired
 	private WebApplicationContext context;
 
 	private MockMvc mvc;
 
-	@Before
+	//@Before
 	public void setUp() {
 		this.mvc = MockMvcBuilders.webAppContextSetup(this.context).build();
 	}
 
-	@Test
+	//@Test
 	public void testHome() throws Exception {
 
 		this.mvc.perform(get("/")).andExpect(status().isOk())
 				.andExpect(content().string("Bath"));
 	}
 
-	@Test
+	//@Test
 	public void testJmx() throws Exception {
 		assertThat(ManagementFactory.getPlatformMBeanServer()
 				.queryMBeans(new ObjectName("jpa.sample:type=HikariDataSource,*"), null))

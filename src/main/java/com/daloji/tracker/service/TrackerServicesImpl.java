@@ -1,14 +1,12 @@
 package com.daloji.tracker.service;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.daloji.tracker.model.Localisation;
 import com.daloji.tracker.model.Tracker;
+import com.daloji.tracker.repository.TrackerRepository;
 
 @Component("trackerService")
 @Transactional
@@ -42,6 +40,7 @@ public class TrackerServicesImpl implements TrackerServices{
 	public void delete(Tracker tracker) {
 		trackerRepository.delete(tracker);
 	}
+
 
 
 	
