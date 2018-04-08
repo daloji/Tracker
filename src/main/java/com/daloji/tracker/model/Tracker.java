@@ -2,8 +2,6 @@ package com.daloji.tracker.model;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,7 +39,7 @@ public class Tracker  implements Serializable{
 	private String info;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "tracker", cascade = CascadeType.ALL)
-	private Set<Localisation> localisation;
+	private List<Localisation> localisation;
 
 
 	public long getId() {
@@ -74,12 +72,12 @@ public class Tracker  implements Serializable{
 	}
 
 
-	public Set<Localisation> getLocalisation() {
+	public List<Localisation> getLocalisation() {
 		return localisation;
 	}
 
 
-	public void setLocalisation(Set<Localisation> localisation) {
+	public void setLocalisation(List<Localisation> localisation) {
 		this.localisation = localisation;
 	}
 

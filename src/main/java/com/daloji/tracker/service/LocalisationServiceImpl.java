@@ -10,7 +10,7 @@ import com.daloji.tracker.repository.LocalisationRepository;
 
 @Component("localisationService")
 @Transactional
-public class LocalisationServiceImpl  implements LocalistionService{
+public class LocalisationServiceImpl  implements LocalisationService{
    
 	private final LocalisationRepository localisationRepository;
 	
@@ -32,7 +32,7 @@ public class LocalisationServiceImpl  implements LocalistionService{
 	}
 
 	@Override
-	public Localisation AddLocalisation(Localisation localisation) {
+	public Localisation addLocalisation(Localisation localisation) {
 		Localisation newlocalisation = null;
 		if(localisation != null) {
 			newlocalisation = localisationRepository.save(localisation);

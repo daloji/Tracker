@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Credential implements Serializable {
 
@@ -53,6 +55,7 @@ public class Credential implements Serializable {
 	@Column(name="dateEndCredit")
 	private Date dateEndCredit;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Tracker tracker;
 

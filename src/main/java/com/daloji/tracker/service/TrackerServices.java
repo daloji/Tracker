@@ -1,5 +1,8 @@
 package com.daloji.tracker.service;
 
+import java.util.List;
+
+import com.daloji.tracker.exceptions.TrackerMultipleException;
 import com.daloji.tracker.model.Tracker;
 
 public interface  TrackerServices {
@@ -10,8 +13,11 @@ public interface  TrackerServices {
 	
 	//List<Tracker> findLocalisationByName(String name);
 	
-	Tracker addTracker(Tracker tracker);
+	List<Tracker> findAllTracker();
 	
+	Tracker addTracker(Tracker track) throws TrackerMultipleException;
+	
+	Tracker deleteTrackerByName(String name);
 	
 	void delete(Tracker tracker);
 }

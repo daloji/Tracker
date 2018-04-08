@@ -2,8 +2,6 @@ package com.daloji.tracker.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
@@ -142,7 +140,7 @@ public class TrackerRepositoryTest {
 		assertEquals(locTracker.getName(),tracker1.getName());
 		assertEquals(locTracker.getLocalisation().size(),1);
 
-		Set<Localisation> listLoc= locTracker.getLocalisation();
+		List<Localisation> listLoc= locTracker.getLocalisation();
 
 		for(Localisation localisat:listLoc) {
 			assertEquals(localisat.getLatitude(),localisation.getLatitude(),1);

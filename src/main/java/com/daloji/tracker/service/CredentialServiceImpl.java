@@ -10,10 +10,10 @@ import com.daloji.tracker.repository.CredentialRepository;
 @Transactional
 public class CredentialServiceImpl implements CredentialService {
 
-	
+
 	private final CredentialRepository credentialrepository;
-	
-	
+
+
 	public CredentialServiceImpl(CredentialRepository repo) {
 		credentialrepository = repo;
 	}
@@ -21,5 +21,12 @@ public class CredentialServiceImpl implements CredentialService {
 	public Credential findCredentialByNumber(String number) {
 		return credentialrepository.findByNumber(number);
 	}
-
+	@Override
+	public Credential addCredential(Credential credential) {
+		Credential cred =null;
+		if(credential !=null) {
+			cred= credentialrepository.save(credential);
+		}
+		return cred;
+	}
 }
